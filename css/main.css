@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3c3c3c;
+    font-family: 'Bodoni Moda', serif;
+    color: white;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    right: 0;
+    position: fixed;
+    animation: fallFromTop 1.5s ease-out forwards;
+}
+
+.nav a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #6b6b6b;
+    color: white;
+}
+
+h1 {
+    /*
+    position: absolute;
+    width: 708px;
+    height: 125px;
+    left: 221px;
+    top: 200px;
+    
+    font-weight: 400;
+    font-size: 126px;
+    line-height: 155px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    */
+    position: relative;
+    top: 20px;
+    left: 10%;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 400;
+    line-height: .5;
+    animation: fallFromTop 2.5s ease-out forwards;
+}
+
+h4 {
+    /*
+    position: absolute;
+    width: 264px;
+    height: 39px;
+    left: 221px;
+    top: 359px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    */
+    position: relative;
+    top: 40px;
+    left: 10%;
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+    font-weight: 400;
+    color: #aaaaaa;
+    animation: fadeIn ease 5s;
+}
+
+.name-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack heading elements */
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align to the left */
+    /*padding: 50px;  /*Horizontal padding */
+    background-color: #3c3c3c; /* Match background color */
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 50px;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 100px;
+    animation: fadeIn ease 1.5s;
+}
+
+.alternate-section {
+    background-color: #535353;
+}
+
+.responsive-image {
+    width: 400px;
+    height: auto;
+}
+
+.image-description {
+    width: 500px;
+}
+
+.image-description p {
+    font-size: clamp(.6rem, 1.5vw, 3rem); /* Responsive font size */
+    line-height: 1.5;
+}
+
+.project-container-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap into multiple rows */
+    gap: 20px; /* Optional: space between each project item */
+    justify-content: space-between; /* Ensure items are evenly spaced */
+    padding: 20px; /* Add some padding around the section */
+    padding-bottom: 50px;
+}
+
+.project-container {
+    flex: 1 1 calc(33% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-image {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.project-container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.project-description {
+    margin-top: 10px;
+}
+
+footer h3 {
+    font-size: 25px;
+    padding: 20px;
+}
+
+footer p{
+    padding-left: 20px;
+}
+
+.linked-in {
+    height: 40px;
+    width: auto;
+    padding-left: 15px;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fallFromTop {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(10px);
+        opacity: .7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* For tablets and below, stack items in 1 column */
+@media (max-width: 850px) {
+    .project-container {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row */
+    }
+}
+
+@media (max-width: 550px) {
+    .project-container {
+        flex: 1 1 100%; /* 1 item per row on very small screens */
+    }
+}
+
+
+
