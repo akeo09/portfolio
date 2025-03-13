@@ -46,6 +46,9 @@ jobs:
           app_build_command: "echo 'No build step required'"
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
+      - name: Clean up Git configuration (no fail)
+        run: |
+          git config --unset-all http.https://github.com/.extraheader || echo "No extraheader config to clean"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
