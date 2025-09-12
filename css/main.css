@@ -273,5 +273,57 @@ footer p{
     }
 }
 
+/* Default modal image: responsive */
+#modal-image {
+    width: 100%;
+    height: auto;
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+  
+  /* Gallery-specific modal: fixed size */
+  .modal.gallery-active .modal-content {
+    width: 400px;             /* override 50% width */
+    max-width: none;
+    margin: 5% auto;         /* keep it centered */
+  }
+  
+  .modal.gallery-active #modal-image {
+    width: 800px;            /* fixed width */
+    height: 500px;           /* fixed height */
+    object-fit: contain;       /* crop/fill image */
+  }
 
+  /* Navigation arrows for modal */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;                  /* vertically center */
+  transform: translateY(-50%); /* perfect centering */
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
+  user-select: none;
+  transition: 0.3s;
+  z-index: 10;               /* ensure arrows stay above image */
+}
+
+.prev:hover,
+.next:hover {
+  color: #bbb;
+}
+
+/* Positioning */
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+  
 
