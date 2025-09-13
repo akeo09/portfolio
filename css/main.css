@@ -132,6 +132,10 @@ h2 {
     line-height: 1.5;
 }
 
+.ui-description {
+    text-align: center;
+}
+
 .project-container-wrapper {
     display: flex;
     flex-wrap: wrap; /* Allows the items to wrap into multiple rows */
